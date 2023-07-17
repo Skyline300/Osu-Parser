@@ -1,0 +1,11 @@
+[debug] Packaging C:\scodec\target\scala-2.13\scodec_2.13-0.1.0-SNAPSHOT.jar ...
+[debug] Input file mappings:
+[debug] 	decode$.class
+[debug] 	  C:\scodec\target\scala-2.13\classes\decode$.class
+[debug] 	decode.class
+[debug] 	  C:\scodec\target\scala-2.13\classes\decode.class
+[debug] 	main$.class
+[debug] 	  C:\scodec\target\scala-2.13\classes\main$.class
+[debug] 	main.class
+[debug] 	  C:\scodec\target\scala-2.13\classes\main.class
+[debug] Done packaging.
