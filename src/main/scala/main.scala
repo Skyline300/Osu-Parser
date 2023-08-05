@@ -28,7 +28,7 @@ object main{
     println(arrBuffer)
     val gameMode = decode.decodeByte(arrBuffer)
     val ver = arrBuffer.slice(1,5)
-    println(ver)
+    println(ver(0).getClass)
     // val res = decode.decodeFrom(otp, bits)
     // val something = writeBinary(55)
     // println(something)
