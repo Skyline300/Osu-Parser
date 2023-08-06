@@ -3,6 +3,8 @@ import scodec.codecs._
 import upickle.default._
 
 import java.io.{BufferedInputStream, FileInputStream}
+import java.nio.ByteBuffer
+import java.nio.ByteOrder
 import scala.collection.mutable.ArrayBuffer
 import scala.io.Source
 
@@ -25,10 +27,13 @@ object main{
       arrBuffer += read
     }
     println("---------The whole Buffer---------")
-    println(arrBuffer)
-    val gameMode = decode.decodeByte(arrBuffer)
-    val ver = arrBuffer.slice(1,5)
-    println(ver(0).getClass)
+    //println(arrBuffer)
+    val gameMode = decode.getMode(arrBuffer(0))
+    println(gameMode)
+    val version = arrBuffer.slice(1,5)
+    println(version)
+    val intVersion =  decode.decodeInt(version)
+    println(intVersion)
     // val res = decode.decodeFrom(otp, bits)
     // val something = writeBinary(55)
     // println(something)

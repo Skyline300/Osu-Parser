@@ -24,9 +24,18 @@ object decode {
     val decoded = (bits ^ otp) rotateLeft 3
     variableSizeBytes(uint16, utf8).decode(decoded).require.value
   }
+
+  def getMode(buffer: Byte): String = {
+    buffer match {
+      case 0 => "STD"
+      case 1 => "Taiko"
+      case 2 => "CtB"
+      case 3 => "Mania"
+      case _ => "could not find game mode"
+    }
+  }
   def decodeInt(buffer: ArrayBuffer[Byte]): Int ={
-    offset += 4
-     1
+    buffer.map(x => java.lang.Integer.reverseBytes(x))
   }
   def decodeShort(buffer: ArrayBuffer[Byte]): Short = {
       1
