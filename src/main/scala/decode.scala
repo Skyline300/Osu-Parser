@@ -2,6 +2,8 @@
 import scodec.bits._
 import scodec.codecs._
 import upickle.default._
+import java.nio.ByteBuffer
+
 
 import java.io.{BufferedInputStream, FileInputStream}
 import scala.collection.mutable.ArrayBuffer
@@ -35,13 +37,16 @@ object decode {
     }
   }
   def decodeInt(buffer: ArrayBuffer[Byte]): Int ={
-    buffer.map(x => java.lang.Integer.reverseBytes(x))
+    val decodedBuffer = ByteBuffer.wrap(buffer.toArray.reverse)
+    decodedBuffer.getInt
   }
   def decodeShort(buffer: ArrayBuffer[Byte]): Short = {
-      1
+    val decodedBuffer = ByteBuffer.wrap(buffer.toArray.reverse)
+    decodedBuffer.getShort()
   }
   def decodeLong(buffer: ArrayBuffer[Byte]): Long = {
-      1
+    val decodedBuffer = ByteBuffer.wrap(buffer.toArray.reverse)
+    decodedBuffer.getLong()
   }
   def decodeByte(buffer: ArrayBuffer[Byte]): Byte ={
       1
