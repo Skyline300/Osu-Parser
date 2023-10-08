@@ -31,7 +31,6 @@ object main{
     val gameMode = decode.getMode(arrBuffer(0))
     println(gameMode)
     val version = arrBuffer.slice(1,5)
-    println(version)
     val intVersion =  decode.decodeInt(version)
     println(intVersion)
     // val res = decode.decodeFrom(otp, bits)
