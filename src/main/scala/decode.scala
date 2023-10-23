@@ -51,11 +51,22 @@ object decode {
   def decodeByte(buffer: ArrayBuffer[Byte]): Byte ={
       1
   }
-  def decodeString(buffer: ArrayBuffer[Byte]): String = {
-    ""
+  def decodeString(buffer: ArrayBuffer[Byte]): Any = {
+    buffer(0) match {
+      case 11 => "something"
+      case 0 => "nothing"
+    }
   }
   def decodeWithUpickle(file: BufferedInputStream): Any = {
 
   }
-  
+
+  def getStringLength(buffer: ArrayBuffer[Byte]): Any ={
+    var result = 0
+    var shift = 0
+    while (true) {
+      buffer
+    }
+  }
+
 }
